@@ -120,5 +120,23 @@ namespace Ahorcado.Tests
 
             Assert.AreEqual(ahorcado.Estado, PartidaAhorcado.Estados.Perdida);
         }
+
+        [TestMethod]
+        public void IntentarLetraCorrecta_Test()
+        {
+            Entities.Ahorcado ahorcadoClase = new();
+            ahorcadoClase.Inicializar();
+
+            Assert.AreEqual(ahorcadoClase.IntentarLetra("C"), true);
+        }
+
+        [TestMethod]
+        public void IntentarLetraIncorrecta_Test()
+        {
+            Entities.Ahorcado ahorcadoClase = new();
+            ahorcadoClase.Inicializar();
+
+            Assert.AreEqual(ahorcadoClase.IntentarLetra("J"), false);
+        }
     }
 }
