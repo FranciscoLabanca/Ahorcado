@@ -106,7 +106,7 @@ namespace Ahorcado.Tests
         }
 
         [TestMethod]
-        public void IntentarPalabraCorrecta_Test()
+        public void IngresarPalabraCorrecta_Test()
         {
             ahorcado.IntentarPalabra("CASA");
 
@@ -114,7 +114,7 @@ namespace Ahorcado.Tests
         }
 
         [TestMethod]
-        public void IntentarPalabraIncorrecta_Test()
+        public void IngresarPalabraIncorrecta_Test()
         {
             ahorcado.IntentarPalabra("MESA");
 
@@ -137,6 +137,24 @@ namespace Ahorcado.Tests
             ahorcadoClase.Inicializar();
 
             Assert.AreEqual(ahorcadoClase.IntentarLetra("J"), false);
+        }
+
+        [TestMethod]
+        public void IntentarPalabraCorrecta_Test()
+        {
+            Entities.Ahorcado ahorcadoClase = new();
+            ahorcadoClase.Inicializar();
+
+            Assert.AreEqual(ahorcadoClase.IntentarPalabra("CASA"), true);
+        }
+
+        [TestMethod]
+        public void IntentarPalabraIncorrecta_Test()
+        {
+            Entities.Ahorcado ahorcadoClase = new();
+            ahorcadoClase.Inicializar();
+
+            Assert.AreEqual(ahorcadoClase.IntentarPalabra("MESA"), false);
         }
     }
 }
